@@ -18,7 +18,7 @@ let router = express.Router();
 router.get('/:_id', getUserById );
 router.post('/register',validator(userSchema),hasheador , signUp);
 router.post('/login', accountNotExist, passwordBcript, generateToken, signIn,);
-router.post('/signout', signout)
+router.post('/signout', requireAuth, signout)
 
 
 export default router;

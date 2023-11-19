@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 
 export const requireAuth = (req, res, next) => {
   const token = req.headers.authorization;
+  console.log('TOKKKKEN', token )
 
   if (!token) {
     return res.status(401).json({ error: 'Token no proporcionado' });
